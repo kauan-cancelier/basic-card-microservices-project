@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mscreditassessor
+server:
+  port: 0 # quando colocado na porta 0 ele sobe numa porta randomica n�o ocupada
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    enabled: true
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
